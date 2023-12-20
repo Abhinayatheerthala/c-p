@@ -1,0 +1,57 @@
+#include<iostream>
+using namespace std;
+class Shape
+{
+	protected:
+		float Height;
+		float Radius;
+	public:
+		virtual void calculateArea()=0;
+		virtual void calculateVolume()=0;
+		void getCyl()
+{
+	cin>>Height;
+	cout<<"Enter the Height : "<<Height<<endl;
+	cin>>Radius;
+	cout<<"Enter the Radius : "<<Radius<<endl;
+}
+	void getSphere()
+{
+	cin>>Radius;
+	cout<<"Enter the Radius : "<<Radius<<endl;
+}
+};
+class Sphere: public Shape{
+	public:
+	void calculateArea(){
+		getSphere();
+		cout<<"Area of the Sphere :"<<4*3.14*Radius*Radius<<endl;
+	}
+	void calculateVolume(){
+		getSphere();
+		cout<<"Volume of the Sphere :"<<1.33*3.14*Radius*Radius*Radius<<endl;
+	}
+};
+class Cylinder: public Shape{
+	public:
+	void calculateArea(){
+		getCyl();
+		cout<<"Area of the Cylinder :"<<(2*3.14*Radius*Height)+(2*3.14*Radius*Radius)<<endl;
+	}
+	void calculateVolume(){
+		getCyl();
+		cout<<"Volume of the Cylinder :"<<3.14*Radius*Radius*Height;
+	}
+};
+int main(){	
+Shape *ptra,*ptrv;
+Sphere R;
+ptra = &R;
+ptra->calculateArea();
+ptra->calculateVolume();
+Cylinder T;
+ptrv = &T;
+ptrv->calculateArea();
+ptrv->calculateVolume();
+return 0;
+}
