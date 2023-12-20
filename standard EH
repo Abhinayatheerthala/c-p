@@ -1,0 +1,24 @@
+#include <iostream>
+#include <stdexcept>
+using namespace std;
+void divideNumbers(int numerator, int denominator) {
+    if (denominator == 0) {
+        throw runtime_error("Division by zero is undefined");
+    }
+    int result = numerator / denominator;
+   cout << "Result of division: " << result << endl;
+}
+int main() {
+    try {
+        int numerator, denominator;
+cin>>numerator;
+       cout << "Enter numerator: "<<numerator<<endl;
+        cin >> denominator;
+        cout << "Enter denominator: "<<denominator<<endl;
+       
+        divideNumbers(numerator, denominator);
+    } catch (runtime_error e) {
+        cout << "Exception caught: " << e.what() <<endl;
+    }
+    return 0;
+}
