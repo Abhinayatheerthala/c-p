@@ -1,0 +1,54 @@
+#include<iostream>
+#include<string>
+using namespace std;
+class Animal {
+	protected:
+		string Name;
+		string Species;
+		int age;
+	public:
+		void getData()
+{
+	
+	cin>>Name;
+    cout<<"Enter the Name : "<<Name<<endl;
+	cin>>Species;
+	cout<<"Enter Species : "<<Species<<endl;
+	cin>>age;
+	cout<<"Enter the age : "<<age<<endl;
+}
+};
+class Cat: public Animal{
+	public:
+    void Man(){
+      string color;
+      string breed;
+      cout<<"-----Cat-----"<<endl;
+       getData();
+       cin>>color;
+       cout<<"Enter color : "<<color<<endl;
+       cin>>breed;
+       cout<<"Enter the breed : "<<breed<<endl;
+  }
+};
+class Dog: public Animal{
+	public:
+     void Eng(){
+     int weight;
+     string breed;
+       cout<<"-----Dog-----"<<endl;
+      getData();
+       cin>>weight;
+       cout<<"Enter the weight : "<<weight<<endl;
+       cin>>breed;
+       cout<<"Enter the breed : "<<breed<<endl;
+     }
+};
+int main(){	
+Cat R;
+R.Man();
+cout<<endl;
+Dog T;
+T.Eng();
+return 0;
+}
