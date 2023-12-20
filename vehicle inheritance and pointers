@@ -1,0 +1,54 @@
+#include<iostream>
+#include<string>
+using namespace std;
+class Vehicle {
+	protected:
+		string make;
+		string model;
+		int year;
+	public:
+		void getData()
+{
+	
+	cin>>make;
+    cout<<"Enter Make : "<<make<<endl;
+	cin>>model;
+	cout<<"Enter Model: "<<model<<endl;
+	cin>>year;
+	cout<<"Enter Year: "<<year<<endl;
+}
+};
+class Car: public Vehicle{
+	public:
+    void add(){
+      int seating_capacity;
+      string fuel_type;
+      cout<<"-----Car-----"<<endl;
+      getData();
+       cin>>seating_capacity;
+       cout<<"Enter seating capacity : "<<seating_capacity<<endl;
+       cin>>fuel_type;
+       cout<<"Enter fuel type : "<<fuel_type<<endl;
+  }
+};
+class truck: public Vehicle{
+	public:
+     void add(){
+     int pcap;
+     int tcap;
+       cout<<"-----Truck-----"<<endl;
+       getData();
+       cin>>pcap;
+       cout<<"Enter payload capacity : "<<pcap<<endl;
+       cin>>tcap;
+       cout<<"Enter towing cpacity : "<<tcap<<endl;
+     }
+};
+int main(){	
+Car c;
+c.add();
+cout<<endl;
+truck t;
+t.add();
+return 0;
+}
