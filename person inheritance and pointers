@@ -1,0 +1,52 @@
+#include<iostream>
+#include<string>
+using namespace std;
+class Person {
+	protected:
+		string Name;
+		int Age;
+		string Gender;
+	public:
+		void getData()
+{
+	
+	cin>>Name;
+    cout<<"Enter the Name :"<<Name;
+	cin>>Age;
+	cout<<endl<<"Enter Age:"<<Age;
+	cin>>Gender;
+	cout<<endl<<"Enter the Gender:"<<Gender;
+}
+};
+class Student: public Person{
+	public:
+    void Man(){
+    int classes;
+    int rollnumber;
+       getData();
+       cin>>classes;
+       cout<<endl<<"Enter the classes: "<<classes;
+       cin>>rollnumber;
+       cout<<endl<<"Enter the roll Number: "<<rollnumber;
+      }
+};
+class Teacher: public Person{
+	public:
+     void Eng(){
+      string subject;
+     int salary;
+      getData();
+       cin>>subject;
+       cout<<endl<<"Enter the subject: "<<subject;
+       cin>>salary;
+       cout<<endl<<"Enter the salary: "<<salary;
+     }
+};
+int main(){	
+Student R;
+R.Man();
+cout<<endl;
+Teacher T;
+T.Eng();
+return 0;
+}
