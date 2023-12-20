@@ -1,0 +1,62 @@
+#include<iostream>
+using namespace std;
+class Shape
+{
+	protected:
+		float Height;
+		float Width;
+		float Side;
+	public:
+		virtual void calculateArea()=0;
+		virtual void calculatePerimeter()=0;
+		void getRect()
+{
+	cin>>Height;
+	cout<<"Enter the Height : "<<Height<<endl;
+	cin>>Width;
+	cout<<"Enter the Width : "<<Width<<endl;
+}
+	void getTri()
+{
+	cin>>Height;
+	cout<<"Enter the Height : "<<Height<<endl;
+	cin>>Width;
+	cout<<"Enter the Width : "<<Width<<endl;
+	cin>>Side;
+	cout<<"Enter the Side : "<<Side<<endl;
+}
+};
+class Rectangle: public Shape{
+	public:
+	void calculateArea(){
+		getRect();
+		cout<<"Area of the Rectangle :"<<Height*Width<<endl;
+	}
+	void calculatePerimeter(){
+		getRect();
+		cout<<"Perimeter of the Rectangle :"<<2*(Height+Width)<<endl;
+	}
+};
+class Triangle: public Shape{
+	public:
+	void calculateArea(){
+		getTri();
+		cout<<"Area of the Triangle :"<<0.5*Height*Width<<endl;
+	}
+	void calculatePerimeter(){
+		getTri();
+		cout<<"Perimeter of the Triangle :"<<Height+Width+Side;
+	}
+};
+int main(){	
+Shape *bptra,*bptrp;
+Rectangle R;
+bptra = &R;
+bptra->calculateArea();
+bptra->calculatePerimeter();
+Triangle T;
+bptrp = &T;
+bptrp->calculateArea();
+bptrp->calculatePerimeter();
+return 0;
+}
