@@ -1,0 +1,41 @@
+#include<iostream>
+using namespace std;
+class person{
+  public:
+  virtual void work()
+  {
+    cout<<"Person is working"<<endl;
+  }
+};
+class employee:public person{
+  public:
+  void work()
+  {
+   	cout<<"Employee is working"<<endl;
+  }
+};
+class manager:public person{
+  public:
+  void work() 
+  {
+    cout<<"Manager is working"<<endl;
+  }
+};
+int main()
+{
+  person *p1;
+  person p;
+  employee e;
+  manager m;
+  
+  p1=&p;
+  p1->work();
+  
+  p1=&e;
+  p1->work();
+  
+  p1=&m;
+  p1->work();
+  return 0;
+  
+}
