@@ -1,0 +1,57 @@
+#include<iostream>
+using namespace std;
+class employee
+{
+  protected:
+  	string name;
+  	int id;
+  	int salary;
+  public:
+  	void getdetails()
+    {
+      cin>>name;
+      cout<<"Enter name: "<<name<<endl;
+	  cin>>id;
+      cout<<"Enter id: "<<id<<endl;
+      cin>> salary;
+      cout<<"Enter salary: "<<salary<<endl;
+     
+    }
+};
+class manager:public employee{
+  public:
+  	void add()
+    {
+      cout<<"-----Manager-----"<<endl;
+      getdetails();
+      string dep;
+      int bonus;
+      cin>>dep;
+      cout<<"Enter department: "<<dep<<endl;
+      cin>>bonus;
+      cout<<"Enter bonus: "<<bonus<<endl;
+    }
+};
+class engineer:public employee{
+  public:
+  void add()
+  {
+    cout<<"-----Engineer-----"<<endl;
+    getdetails();
+    string speciality;
+    int hours;
+    cin>>speciality;
+    cout<<"Enter speciality: "<<speciality<<endl;
+    cin>>hours;
+    cout<<"Enter hours: "<<hours<<endl;
+  }
+};
+int main()
+{
+  manager m;
+  m.add();
+  cout<<endl;
+  engineer e;
+  e.add();
+  return 0;
+}
