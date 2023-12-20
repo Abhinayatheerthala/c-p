@@ -1,0 +1,55 @@
+#include<iostream>
+#include<cmath>
+using namespace std;
+class shape{
+  protected:
+  	double height;
+  double width;
+  double side;
+  public:
+  	void getrect()
+    {
+      cout<<"-----Rectangle-----"<<endl;
+      cout<<"Enter height: "<<endl;
+      cin>>height;
+      cout<<"Enter width: "<<endl;
+      cin>>width;
+    }
+  void gettri()
+  {
+    cout<<"-----Triangle-----"<<endl;
+    cout<<"Enter height: "<<endl;
+    cin>>height;
+    cout<<"Enter width: "<<endl;
+    cin>>width;
+    cout<<"Enter side: "<<endl;
+    cin>>side;
+  }
+};
+class Rectangle:public shape{
+  public:
+  	void calAreaPeri()
+    {
+      getrect();
+      cout<<"Area of the rectangle: "<<height*width<<endl;
+      cout<<"Perimeter of the rectangle: "<<2*(height+width);
+    }
+};
+class Triangle:public shape{
+ public:
+  	void calAreaPeri()
+    {
+      gettri();
+      cout<<"Area of triangle: "<<0.5*height*width<<endl;
+      cout<<"Perimeter of the triangle: "<<height+width+side<<endl;
+    }
+};
+int main()
+{
+  Rectangle r;
+  r.calAreaPeri();
+  cout<<endl<<endl;;
+  Triangle t;
+  t.calAreaPeri();
+  return 0;
+}
