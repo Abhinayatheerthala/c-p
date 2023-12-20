@@ -1,0 +1,36 @@
+#include<iostream>
+using namespace std;
+class animal{
+  public:
+  virtual void speak()
+  {
+    cout<<"Animal sepaks"<<endl;
+  }
+};
+class cat:public animal{
+  public:
+  void speak()
+  {
+    cout<<"Cat speaks meow"<<endl;
+  }
+};
+class dog:public animal{
+  public:
+  void speak()
+  {
+    cout<<"Dog is barking"<<endl;
+  }
+};
+int main()
+{
+  animal a,*a1;
+  cat c;
+  dog d;
+  a1=&a;
+  a1->speak();
+  a1=&c;
+  a1->speak();
+  a1=&d;
+  a1->speak();
+  return 0;
+}
