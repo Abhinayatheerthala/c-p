@@ -1,0 +1,20 @@
+#include<iostream>
+using namespace std;
+int main(){
+ int n;
+cin>>n;
+cout<<"Enter the N value: "<<n;
+try {
+if(n==0)
+throw n;
+{
+if(n<0)
+throw n;
+}
+}
+catch(int n){
+cout<<"\n";
+cout<<"It is Negative Number";
+}
+return 0;
+}
