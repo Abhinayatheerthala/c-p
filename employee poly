@@ -1,0 +1,54 @@
+#include<iostream>
+#include<string>
+using namespace std;
+class Employee {
+	protected:
+		string Name;
+		int ID;
+		int Salary;
+	public:
+        virtual void calculatepay()=0;
+		void getData()
+{
+	
+	cin>>Name;
+    cout<<"Enter the Employee Name :"<<Name;
+	cin>>ID;
+	cout<<endl<<"Enter Employee ID:"<<ID;
+	cin>>Salary;
+	cout<<endl<<"Enter Employee Salary:"<<Salary;
+}
+};
+class Manager: public Employee{
+	public:
+    void calculatepay(){
+      string Department;
+      int Bonus;
+       getData();
+       cin>>Department;
+       cout<<endl<<"Enter the Department: "<<Department;
+       cin>>Bonus;
+       cout<<endl<<"Enter the Bonus: "<<Bonus;
+       cout<<endl<<"Total Salary: "<<Bonus+Salary;
+      }
+};
+class Engineer: public Employee{
+	public:
+     void calculatepay(){
+     int Hours;
+      getData();
+       cin>>Hours;
+       cout<<endl<<"Enter the Hours: "<<Hours;
+     }
+};
+int main(){	
+Employee *bptrc,*bptrd;
+Manager R;
+bptrc = &R;
+bptrc->calculatepay();
+cout<<endl;
+Engineer T;
+bptrd = &T;
+bptrd->calculatepay();
+return 0;
+}
